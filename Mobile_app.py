@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -12,8 +12,8 @@ client = gspread.authorize(creds)
 # Open your Google Sheet by name
 sheet = client.open("Mobile sheet").sheet1  # Use sheet1 or worksheet name
 
-model = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\Mobile_model.pkl')
-metadata = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\mobile_metadata.joblib')
+model = pickle.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\Mobile_model.pkl')
+metadata = pickle.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\mobile_metadata.joblib')
 feature_name = metadata['feature_name']
 target_name = metadata['target_name']
 
