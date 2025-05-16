@@ -3,13 +3,15 @@ import pandas as pd
 import pickle
 from datetime import datetime
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+creds = Credentials.from_service_account_info(
+    st.secrets["google_service_account"], scope=scope
+)
 client = gspread.authorize(creds)
 
-# Open your Google Sheet by name
+# Open your Google Sheet
 sheet = client.open("Mobile sheet").sheet1  # Use sheet1 or worksheet name
 
 model = pickle.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\Mobile_model.pkl')

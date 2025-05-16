@@ -1,1 +1,6 @@
 credentials.json
+/Lib/
+/Scripts/
+/include/
+/etc/
+pyvenv.cfg
