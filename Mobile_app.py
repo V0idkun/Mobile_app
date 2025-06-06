@@ -2,17 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
-import gspread
-from google.oauth2.service_account import Credentials
 
-# scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-# creds = Credentials.from_service_account_info(
-#     st.secrets["google_service_account"], scope=scope
-# )
-# client = gspread.authorize(creds)
 
-# # Open your Google Sheet
-# sheet = client.open("Mobile sheet").sheet1  # Use sheet1 or worksheet name
 
 model = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\Mobile_model.pkl')
 metadata = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\mobile_metadata.joblib')
@@ -153,7 +144,7 @@ with tab2:
         # Add to Dataframe
         new_row = {**inputs, 'prediction': p, 'timestamp': datetime.now()}
         df1 = pd.concat([df1, pd.DataFrame([new_row])], ignore_index=True)
-        sheet.append_row([df1])
+        
         # Save to CSV
         df1.to_csv(DATA_FILE, index=False)
         st.info('Prediction saved to database')
