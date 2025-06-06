@@ -5,8 +5,8 @@ from datetime import datetime
 
 
 
-model = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\Mobile_model.pkl')
-metadata = joblib.load('C:\\Users\\User\\Machine Learning\\practice\\mobile\\mobile_metadata.joblib')
+model = joblib.load('Mobile_model.pkl')
+metadata = joblib.load('mobile_metadata.joblib')
 feature_name = metadata['feature_name']
 target_name = metadata['target_name']
 
