@@ -57,7 +57,7 @@ with tab2:
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        inputs['battery_power'] = st.number_input('Battery Power (mAh)', min_value=500, max_value=5000, value=2000)
+        inputs['battery_power'] = st.number_input('Battery Power (mAh)', min_value=500, max_value=2000, value=1000)
     with col2:
         blue = st.selectbox('Bluetooth', options=['NO', 'YES'])
         inputs['blue'] = 1 if blue == 'YES' else 0
@@ -78,11 +78,11 @@ with tab2:
     
     col7, col8, col9 = st.columns(3)
     with col7:
-        inputs['int_memory'] = st.number_input('Internal Memory (GB)', min_value=2, max_value=256, value=64)
+        inputs['int_memory'] = st.number_input('Internal Memory (GB)', min_value=2, max_value=64, value=32,step=10)
     with col8:
-        inputs['m_dep'] = st.number_input('Mobile Depth (cm)', min_value=0.1, max_value=1.0, value=0.5, step=0.01)
+        inputs['m_dep'] = st.number_input('Mobile Depth (cm)', min_value=0.1, max_value=1.0, value=0.5, step=0.2)
     with col9:
-        inputs['mobile_wt'] = st.number_input('Mobile Weight (g)', min_value=80, max_value=300, value=180)
+        inputs['mobile_wt'] = st.number_input('Mobile Weight (g)', min_value=80, max_value=300, value=100,step=20)
 
     col10, col11, col12 = st.columns(3)
     with col10:
@@ -94,9 +94,9 @@ with tab2:
 
     col13, col14, col15 = st.columns(3)
     with col13:
-        inputs['px_width'] = st.number_input('The px width', min_value=500, max_value=2000, value=1000)
+        inputs['px_width'] = st.number_input('The px width', min_value=500, max_value=2000, value=1000,step=500)
     with col14:
-        inputs['ram'] = st.number_input('ram amount (MB) ', min_value=256, max_value=4000, value=1000)
+        inputs['ram'] = st.number_input('ram amount (MB) ', min_value=256, max_value=4000, value=1000,step=500)
     with col15:
         inputs['sc_h'] = st.number_input('The screen height ', min_value=5, max_value=20, value=10)
     
