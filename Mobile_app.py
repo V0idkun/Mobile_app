@@ -63,43 +63,57 @@ with tab2:
         inputs['blue'] = 1 if blue == 'YES' else 0
     with col3:
         inputs['clock_speed'] = st.number_input('Clock Speed (GHz)', min_value=0.5, max_value=3.0, value=2.0, step=0.1)
-    with col1:
+
+    
+    col4, col5, col6 = st.columns(3)
+    with col4:
         dual_sim = st.selectbox('Dual SIM', options=['NO', 'YES'])
         inputs['dual_sim'] = 1 if dual_sim == 'YES' else 0
-    with col2:
+    with col5:
         inputs['fc'] = st.number_input('Front Camera (MP)', min_value=0, max_value=20, value=5)
-    with col3:
+    with col6:
         four_g = st.selectbox('4G Support', options=['NO', 'YES'])
         inputs['four_g'] = 1 if four_g == 'YES' else 0
-    with col1:
+
+    
+    col7, col8, col9 = st.columns(3)
+    with col7:
         inputs['int_memory'] = st.number_input('Internal Memory (GB)', min_value=2, max_value=256, value=64)
-    with col2:
+    with col8:
         inputs['m_dep'] = st.number_input('Mobile Depth (cm)', min_value=0.1, max_value=1.0, value=0.5, step=0.01)
-    with col3:
+    with col9:
         inputs['mobile_wt'] = st.number_input('Mobile Weight (g)', min_value=80, max_value=300, value=180)
-    with col1:
+
+    col10, col11, col12 = st.columns(3)
+    with col10:
         inputs['n_cores'] = st.number_input('The numbers of cores', min_value=1, max_value=8, value=3)
-    with col2:
+    with col11:
         inputs['pc'] = st.number_input('primary camera (MP)', min_value=0, max_value=20, value=3)
-    with col3:
+    with col12:
         inputs['px_height'] = st.number_input('The px height ', min_value=0, max_value=2000, value=3)
-    with col1:
+
+    col13, col14, col15 = st.columns(3)
+    with col13:
         inputs['px_width'] = st.number_input('The px width', min_value=500, max_value=2000, value=1000)
-    with col2:
+    with col14:
         inputs['ram'] = st.number_input('ram amount (MB) ', min_value=256, max_value=4000, value=1000)
-    with col3:
+    with col15:
         inputs['sc_h'] = st.number_input('The screen height ', min_value=5, max_value=20, value=10)
-    with col1:
+    
+    col16, col17, col18 = st.columns(3)
+    with col16:
         inputs['sc_w'] = st.number_input('The screen width', min_value=0, max_value=20, value=10)
-    with col2:
+    with col17:
         inputs['talk_time'] = st.number_input('The talk time', min_value=2, max_value=20, value=3)
-    with col3:
+    with col18:
         three_g_input = st.selectbox('3G',options=['NO', 'YES'])
         inputs['three_g'] = 1 if three_g_input == 'YES' else 0
-    with col1:
+
+    col19, col20 = st.columns(2)
+    with col19:
         touch_screen = st.selectbox('Touch screen', options=['NO', 'YES'])
         inputs['touch_screen'] = 1 if touch_screen == 'YES' else 0
-    with col2:
+    with col20:
         wifi =  st.selectbox('Wifi', options=['NO', 'YES'])
         inputs['wifi'] = 1 if wifi == 'YES' else 0
     
